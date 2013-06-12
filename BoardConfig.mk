@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/htc/protou/BoardConfigVendor.mk
+#-include vendor/htc/protou/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_CPU_ABI := armeabi-v7a
@@ -37,21 +37,20 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13104640
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1004535296
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1291845120
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_VOLD_MAX_PARTITIONS := 36
+
 
 TARGET_PREBUILT_KERNEL := device/htc/protou/kernel
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
+BOARD_VOLD_MAX_PARTITIONS := 36
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/f_mass_storage/lun0/file
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/f_mass_storage/lun1/file
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_INITRC := device/htc/protou/recovery/init.recovery.rc
-#BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_10x18.h\"
-#BOARD_CUSTOM_GRAPHICS := ../../../device/htc/protou/recovery/graphics.c
+
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 
